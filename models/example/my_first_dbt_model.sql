@@ -12,13 +12,13 @@
 with source_data as (
 
     select 1 as id
-    union all
+    union all 
     select null as id
 
 )
 
 select *
-from source_data JOIN ON {{var('config_db1',"Bansilal")}}.{{var('config_schema')}}
+from source_data JOIN ON {{var('config_db',"DEV_OPS_DB")}}.{{var('config_schema')}}
 
 /*
     Uncomment the line below to remove records with null `id` values
