@@ -18,7 +18,7 @@ with source_data as (
 )
 
 select *
-from source_data JOIN ON {{var('config_db',"DEV_OPS_DB")}}.{{var('config_schema')}}
+from source_data
 
 /*
     Uncomment the line below to remove records with null `id` values
