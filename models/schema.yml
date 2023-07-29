@@ -1,0 +1,8 @@
+sources:
+  - name: SOURCE_SCHEMA
+    database: "DBT_PRACTICE_DB"
+    schema: "RAW_SOURCE"
+    tables:
+          - name: raw_orders
+          - name: raw_customer
+          - name: raw_payments
