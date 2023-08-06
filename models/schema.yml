@@ -6,3 +6,48 @@ sources:
           - name: raw_orders
           - name: raw_customer
           - name: raw_payments
+  - name: SOURCE_EBS
+    database: "DEV_OPS_DB"
+    schema: "CONFIG"
+    tables:     
+          - name: DATALOAD_CONFIG   
+
+
+models:
+  - name: CUSTOMERS
+    description: This table has basic information about a customer, as well as some derived facts based on a customer's orders
+
+    columns:
+      - name: customer_id
+        description: This is a unique identifier for a customer
+        tests:
+          - unique
+          - not_null
+
+      - name: first_name
+        description: Customer's first name. PII.
+        tests:
+          - order_limit
+
+        
+      - name: last_name
+        description: Customer's last name. PII.
+
+      - name: FIRST_ORDER
+        description: Date (UTC) of a customer's first order
+        tests:
+          - not_null
+      - name: most_recent_order
+        description: Date (UTC) of a customer's most recent order
+
+      - name: number_of_orders
+        description: Count of the number of orders a customer has placed
+
+      - name: total_order_amount
+        description: Total value (AUD) of a customer's orders
+        tests:
+          - unique:
+              config:
+                severity: error
+                error_if: ">1000"
+                warn_if: ">10"
