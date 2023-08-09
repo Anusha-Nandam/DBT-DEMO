@@ -25,7 +25,7 @@ def main():
     cursor = conn.cursor()
 
     # Execute a SQL query
-    cursor.execute("SELECT * FROM RAW_CUSTOMER")
+    cursor.execute("SELECT * FROM RAW.RAW_CUSTOMER")
     results = cursor.fetchall()
 
     # Display the data using Streamlit
