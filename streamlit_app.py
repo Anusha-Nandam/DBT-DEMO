@@ -3,7 +3,7 @@ import snowflake.connector
 
 # Snowflake connection parameters
 SNOWFLAKE_USER = 'bkeloth'
-SNOWFLAKE_PASSWORD = 'Bansi@2022'
+SNOWFLAKE_PASSWORD = 'dd'
 SNOWFLAKE_ACCOUNT = 'anblickspartner.east-us-2.azure.snowflakecomputing.com'
 SNOWFLAKE_DATABASE = 'DBT_PRACTICE_DB'
 SNOWFLAKE_WAREHOUSE = 'POC_DATAHUB_GX_WH'
