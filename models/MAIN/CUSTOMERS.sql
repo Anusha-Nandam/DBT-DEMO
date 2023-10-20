@@ -1,4 +1,4 @@
-{{ config(materialized ='table')}}
+{{ config(materialized ='table',tags=["AC"] )}}
 {#{{ config(materialized='table', sort='timestamp', dist='user_id') }}#}
 
 with customers as (
