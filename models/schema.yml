@@ -1,0 +1,42 @@
+
+version: 2
+
+models:
+    - name: raw_employee
+      description: "A table containing employee information."
+      columns:
+        - name: EMPLOYEENO
+          description: "The unique identifier for each employee."
+          tests:
+            - unique
+            - not_null
+        - name: ENAME
+          description: "The name of the employee."
+          tests:
+            - unique
+            - not_null
+        - name: GENDER
+          description: "The gender of the employee."
+          tests:
+            - not_null
+        - name: JOB
+          description: "The job position of the employee."
+        - name: MGR
+          description: "The manager's EMPLOYEENO for the employee."
+        - name: HIREDATE
+          description: "The date when the employee was hired."
+          tests:
+            - unique
+            - not_null
+        - name: SAL
+          description: "The salary of the employee."
+          tests:
+            - unique
+            - not_null
+        - name: COMM
+          description: "The commission earned by the employee."
+        - name: DEPARTMENTNO
+          description: "The department number where the employee works."
+          tests:
+            - unique
+            - not_null
