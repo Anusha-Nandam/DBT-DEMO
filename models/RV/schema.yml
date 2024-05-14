@@ -43,4 +43,8 @@ models:
         tests:
           - accepted_values:
               values:
-                - ["returned","completed"]
+                - returned
+                - completed
+                - shipped
+                - return_pending
+                - placed

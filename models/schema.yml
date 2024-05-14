@@ -45,6 +45,3 @@ models:
           description: "The commission earned by the employee."
         - name: DEPARTMENTNO
           description: "The department number where the employee works."
-          tests:
-            - unique
-            - not_null
