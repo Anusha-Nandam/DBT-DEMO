@@ -33,15 +33,14 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 
-
 models:
   raw_employee:
     materialized: view
   stg_employee:
     materialized: table
   hub_employee:
-    materialized: view
+    materialized: incremental
   sats_employee:
-    materialized: view
+    materialized: incremental
   BV:
     materialized: view

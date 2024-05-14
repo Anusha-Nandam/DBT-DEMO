@@ -1,8 +1,16 @@
 
 version: 2
 
+sources:
+  - name: CONFIG_SCHEMA
+    database: "DBT_PRACTICE_DB"
+    schema: "MAIN"
+    tables:
+      - name: EMPLOYEE
+
+
 models:
-    - name: raw_employee
+    - name: raw_employee_data
       description: "A table containing employee information."
       columns:
         - name: EMPLOYEENO
