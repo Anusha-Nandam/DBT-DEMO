@@ -34,13 +34,13 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 
 models:
-  raw_employee:
+  raw:
     materialized: view
-  stg_employee:
+  stg:
     materialized: table
-  hub_employee:
+  hub:
     materialized: incremental
-  sats_employee:
+  sats:
     materialized: incremental
   BV:
     materialized: view
