@@ -1,0 +1,1 @@
+SELECT * FROM {{ source('customer_data','RAW_CUSTOMER') }}
