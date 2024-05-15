@@ -1,4 +1,4 @@
-{%- set source_model = ["stg_employee"] -%}
+{%- set source_model = ["stg_employee_data"] -%}
 {%- set src_pk = "EMP_NO" -%}
 {%- set src_nk = "EMP_NAME" -%}
 {%- set src_ldts = "HIREDATE" -%}

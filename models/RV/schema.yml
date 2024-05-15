@@ -1,0 +1,50 @@
+version: 2
+
+sources:
+  - name: customer_data
+    database: DBT_PRACTICE_DB
+    schema: RAW_SOURCE
+    tables:
+      - name: RAW_CUSTOMER
+      - name: RAW_ORDERS
+
+models:
+  - name: raw_customers_data
+    description : "Details of the customers"
+    columns :
+      - name : ID
+        description: "Unique identifier"
+        tests:
+          - unique
+          - not_null
+      - name: FIRST_NAME
+        description: "First name of the customer"
+      - name: LAST_NAME
+        description: "last name of the customer"
+
+  - name: raw_orders_data
+    description: "customer orders"
+    columns:
+      - name: ID
+        description: "Id of customers orders"
+        tests:
+          - unique 
+          - not_null 
+      - name: USER_ID
+        description: "foreign key references to raw_customer_-orders model"
+        tests:
+          - relationships:
+              field: ID
+              to: ref('raw_customers_data')
+      - name: ORDER_DATE
+        description: "order date wrt customers"
+      - name: STATUS
+        description: "Status of the customers orders"
+        tests:
+          - accepted_values:
+              values:
+                - returned
+                - completed
+                - shipped
+                - return_pending
+                - placed

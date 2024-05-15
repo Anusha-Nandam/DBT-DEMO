@@ -2,7 +2,7 @@
 {% set selection_list = m_stage_column_list('MAIN','EMPLOYEE') %}
 
 {%- set yaml_metadata -%}
-source_model: 'raw_employee'
+source_model: 'raw_employee_data'
 hashed_columns:
     EMP_NO: ['EMPLOYEENO']
     EMP_NAME: ['ENAME']

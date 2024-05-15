@@ -2,7 +2,7 @@
 {% set selection_list_fk_bk_cols = ["EMP_NO","EMP_NAME"] %}
 {% set selection_list = selection_list_fk_bk_cols + selection_list_context %}
 
-{%- set source_model = "stg_employee" -%}
+{%- set source_model = "stg_employee_data" -%}
 {%- set src_pk = ["EMP_NO"] -%}
 {%- set src_payload = selection_list -%}
 -- {%- set src_hashdiff = "RECORD_HASH_DIFF" -%}

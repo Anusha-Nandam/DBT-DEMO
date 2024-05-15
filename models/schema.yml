@@ -1,13 +1,25 @@
 
 version: 2
+<<<<<<< HEAD
 sources:
   - name: CONFIG_SCHEMA
     database: "DBT_PRACTICE_DB"
     schema: "RAW_SOURCE"
     tables: 
       - name:  DEPARTMENT
+=======
+
+sources:
+  - name: CONFIG_SCHEMA
+    database: "DBT_PRACTICE_DB"
+    schema: "MAIN"
+    tables:
+      - name: EMPLOYEE
+
+
+>>>>>>> 582d70b7c8c710bb9a6aa0264e1b9866ab4a2069
 models:
-    - name: raw_employee
+    - name: raw_employee_data
       description: "A table containing employee information."
       columns:
         - name: EMPLOYEENO
@@ -42,6 +54,7 @@ models:
           description: "The commission earned by the employee."
         - name: DEPARTMENTNO
           description: "The department number where the employee works."
+<<<<<<< HEAD
           tests:
             - unique
             - not_null
@@ -61,3 +74,5 @@ models:
             - unique 
             - not_null    
             
+=======
+>>>>>>> 582d70b7c8c710bb9a6aa0264e1b9866ab4a2069
