@@ -2,7 +2,7 @@
 {% set selection_list_fk_bk_cols = ["ID"] %}
 {% set selection_list = selection_list_fk_bk_cols + selection_list_context %}
 
-{%- set source_model = "raw_orders_data" -%}
+{%- set source_model = "stg_orders_data" -%}
 {%- set src_pk = ["ID"] -%}
 {%- set src_payload = selection_list -%}
 -- {%- set src_hashdiff = "RECORD_HASH_DIFF" -%}
