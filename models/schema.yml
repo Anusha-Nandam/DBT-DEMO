@@ -1,0 +1,52 @@
+version: 2
+ 
+sources:
+  - name: CONFIG_SCHEMA
+    database: "DBT_PRACTICE_DB"
+    schema: "MAIN"
+    tables:
+      - name: CUSTOMERS
+ 
+ 
+models:
+    - name: RAW_CUSTOMER_DATA
+      description: "A table containing CUSTOMERS DETAILED information."
+      columns:
+        - name: CUSTOMERID
+          description: "The unique identifier for each CUSTOMER."
+          tests:
+            - unique
+            - not_null
+        - name: FIRST_NAME
+          description: "The FIRSTNAME of the CUSTOMER."
+          tests:
+            - not_null
+        - name: LAST_NAME
+          description: "The LASTNAME of the CUSTOMER."
+          tests:
+            - not_null
+        - name: FIRST_ORDER
+          description: "The DATE when the customer ordered for firsttime."
+          tests:
+            - not_null
+        - name: MOST_RECENT_ORDER
+          description: "The DATE when the customer ordered for RECENTLY."
+          tests:
+            - not_null
+        - name: NUMBER_OF_ORDERS
+          description: "IT DISPLAYS COUNT OF ORDERS FOR EACH CUSTOMER."
+          tests:
+            - unique
+            - not_null
+        - name: CUSTOMER_LIFETIME_VALUE
+          description: "IT DISPLAYS THE LIFETIME VALUE FOR EACH CUSTOMER"
+          tests:
+            - unique
+            - not_null
+        - name: TOTAL_ORDER_AMOUNT
+          description: "The TOTAL ORDER AMOUNT FOR EACH CUSTOMER."
+          tests:
+            - unique
+            - not_null
+                
+        
