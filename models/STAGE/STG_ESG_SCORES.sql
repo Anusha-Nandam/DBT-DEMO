@@ -1,9 +1,9 @@
-{% set selection_list = m_stage_column_list('RAW_SOURCE','RAW_PAYMENTS') %}
+{% set selection_list = m_stage_column_list('MAIN','ESG_SCORES_DEMO') %}
 
 {%- set yaml_metadata -%}
-source_model: 'RAW_PAYMENTS'
+source_model: 'RAW_MAIN'
 hashed_columns:
-    ID: ['ID_NO']
+    CUSTOMER_ID: ['CUSTOMER_ID']
 {%- endset -%}
 
 
