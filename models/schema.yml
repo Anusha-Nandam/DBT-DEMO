@@ -1,12 +1,11 @@
 
 version: 2
-
 sources:
   - name: CONFIG_SCHEMA
     database: "DBT_PRACTICE_DB"
-    schema: "MAIN"
-    tables:
-      - name: EMPLOYEE
+    schema: "RAW_SOURCE"
+    tables: 
+      - name:  DEPARTMENT
 
 
 models:
@@ -45,3 +44,22 @@ models:
           description: "The commission earned by the employee."
         - name: DEPARTMENTNO
           description: "The department number where the employee works."
+
+          tests:
+            - unique
+            - not_null
+    - name: RAW_DEPARTMENT_DATA
+      description: "A table containing Department information."
+      columns:
+        - name: DNAME
+          description: "The unique identifier for each Department."
+        - name: DEPARTMENTNO
+          description: "The unique identifier for each Department."
+          tests:
+            - unique
+            - not_null
+        - name: LOC
+          description: "The COLUMN INCLUDES EACH Department LOCATION."
+          tests:
+            - unique 
+            - not_null    
