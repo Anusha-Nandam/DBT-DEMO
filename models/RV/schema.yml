@@ -21,6 +21,9 @@ models:
         description: "First name of the customer"
       - name: LAST_NAME
         description: "last name of the customer"
+    tests:
+      - dbt_expectations.expect_table_row_count_to_equal:
+          value: 100
 
   - name: raw_orders_data
     description: "customer orders"
@@ -28,8 +31,8 @@ models:
       - name: ID
         description: "Id of customers orders"
         tests:
-          - unique 
-          - not_null 
+          - dbt_expectations.expect_column_values_to_not_be_null
+          - dbt_expectations.expect_column_values_to_be_unique
       - name: USER_ID
         description: "foreign key references to raw_customer_-orders model"
         tests:
