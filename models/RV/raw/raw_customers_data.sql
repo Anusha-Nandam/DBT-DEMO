@@ -5,5 +5,5 @@ select
     ,NULL AS RECORD_END_DATE
     ,TRUE AS RECORD_IS_ACTIVE
 from ( 
-    {{ source('customer_data','RAW_CUSTOMER') }} 
+    {{ source('TABLES','RAW_CUSTOMER') }} 
     ) AS SRCTBL
