@@ -24,6 +24,16 @@ models:
     tests:
       - dbt_expectations.expect_table_row_count_to_equal:
           value: 100
+      - dbt_utils.equal_rowcount:
+          compare_model: ref('stg_customers_data')
+      - dbt_utils.equality:
+          compare_model: ref('stg_customers_data')
+          compare_columns:
+            - ID
+            - FIRST_NAME
+            - LAST_NAME
+      - dbt_utils.expression_is_true:
+          expression: "ID > 5"
 
   - name: raw_orders_data
     description: "customer orders"
