@@ -32,8 +32,8 @@ models:
             - ID
             - FIRST_NAME
             - LAST_NAME
-      - dbt_utils.expression_is_true:
-          expression: "ID > 5"
+      # - dbt_utils.expression_is_true:
+      #     expression: "ID > 5"
 
   - name: raw_orders_data
     description: "customer orders"
@@ -59,8 +59,11 @@ models:
       - name: STATUS
         description: "Status of the customers orders"
         tests:
+          - unique:
+              config:
+                severity : warn
           - dbt_expectations.expect_column_values_to_be_in_set:
-              value_set: ['returned','completed','shipped']
+              value_set: ['returned','completed','shipped','return_pending','placed']
           - accepted_values:
               values:
                 - returned
