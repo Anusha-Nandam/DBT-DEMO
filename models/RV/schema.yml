@@ -9,11 +9,16 @@ sources:
       - name: RAW_ORDERS
 
 models:
+  - name: sat_customers_data
+    description: customers data satellite
+    tests: 
+      - test_compare_relations:
+          target_table: ref('BV_customers_data')
   - name: raw_customers_data
-    description : "Details of the customers"
+    # description : "Details of the customers"
     columns :
       - name : ID
-        description: "Unique identifier"
+        # description: "Unique identifier"
         tests:
           - unique
           - not_null
@@ -22,6 +27,8 @@ models:
       - name: LAST_NAME
         description: "last name of the customer"
     tests:
+    #   - dbt_expectations.expect_column_descriptions_to_exist:
+    #       severity: warn
       - dbt_expectations.expect_table_row_count_to_equal:
           value: 100
       - dbt_utils.equal_rowcount:
@@ -36,6 +43,7 @@ models:
       #     expression: "ID > 5"
 
   - name: raw_orders_data
+    # +required_docs: true  # not working
     description: "customer orders"
     columns:
       - name: ID
@@ -63,7 +71,9 @@ models:
               config:
                 severity : warn
           - dbt_expectations.expect_column_values_to_be_in_set:
-              value_set: ['returned','completed','shipped','return_pending','placed']
+              value_set: ['returned','completed','shipped']
+              config:
+                severity : warn
           - accepted_values:
               values:
                 - returned

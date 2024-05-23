@@ -36,7 +36,10 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   raw:
     materialized: view
-  stg:
+  RV:
+    materialized: view
+    +required_docs: true  # not working  # dbt run-operation required_docs
+  stg: 
     materialized: table
   hub:
     materialized: incremental
