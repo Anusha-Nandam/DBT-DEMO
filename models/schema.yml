@@ -9,7 +9,7 @@ sources:
  
  
 models:
-    - name: RAW_CUSTOMER_DATA
+    - name: RAW_CUST_DATA
       description: "A table containing CUSTOMERS DETAILED information."
       columns:
         - name: CUSTOMERID
