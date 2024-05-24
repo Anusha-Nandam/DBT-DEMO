@@ -1,0 +1,117 @@
+dblearn:
+  outputs:
+    dev:
+      account: LOOGIZK.DS68844
+      database: AIRBNB
+      password: "\x16"
+      role: transform
+      schema: DEV
+      threads: 1
+      type: snowflake
+      user: dbt
+      warehouse: COMPUTE_WH
+  target: dev
+dbtlear:
+  outputs:
+    dev:
+      account: ps27157.us-east-2
+      database: AIRBNB
+      password: "\x16"
+      role: transform
+      schema: DEV
+      threads: 1
+      type: snowflake
+      user: dbt
+      warehouse: COMPUTE_WH
+  target: dev
+dbtlearn:
+  outputs:
+    dev:
+      account: ps27157.us-east-2.aws
+      database: AIRBNB
+      password: dbtPassword123
+      role: transform
+      schema: raw
+      threads: 1
+      type: snowflake
+      user: dbt
+      warehouse: COMPUTE_WH
+  target: dev
+dbtlearner:
+  outputs:
+    dev:
+      account: ps27157.us-east-2.aws
+      database: AIRBNB
+      password: dbtPassword123
+      role: transform
+      schema: DEV
+      threads: 1
+      type: snowflake
+      user: dbt
+      warehouse: COMPUTE_WH
+  target: dev
+dbtref:
+  outputs:
+    dev:
+      account: ps27157.us-east-2.aws
+      database: RAW
+      password: Anu@1802
+      role: REFDEV
+      schema: REFDEV
+      threads: 1
+      type: snowflake
+      user: Anu
+      warehouse: COMPUTE_WH
+  target: dev
+dbtreft:
+  outputs:
+    dev:
+      account: ps27157.us-east-2.aws
+      database: RAW
+      password: Anu@1802
+      role: transformer
+      schema: REFDEV
+      threads: 1
+      type: snowflake
+      user: Anu
+      warehouse: transforming
+  target: dev
+refdbtlearn:
+  outputs:
+    dev:
+      account: loogizk-ds68844
+      database: JSREF
+      password: Anu@1802
+      role: ACCOUNTADMIN
+      schema: REFDEV
+      threads: 1
+      type: snowflake
+      user: Anu
+      warehouse: COMPUTE_WH
+  target: dev
+refdbtlearner:
+  outputs:
+    dev:
+      account: https://ps27157.us-east-2.aws.snowflakecomputing.com
+      database: JSREF
+      password: dbt123
+      role: transformation
+      schema: DBTREF
+      threads: 1
+      type: snowflake
+      user: dbtreft
+      warehouse: COMPUTE_WH
+  target: dev
+default:
+  outputs:
+   default:
+      account: anblickspartner.east-us-2.azure
+      database: DBT_PRACTICE_DB
+      password: Anusiri@1802
+      role: SYSADMIN
+      schema: Main
+      threads: 4
+      type: snowflake
+      user: Anusha
+      warehouse: COMPUTE_WH
+  target: default
